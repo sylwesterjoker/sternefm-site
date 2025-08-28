@@ -57,7 +57,16 @@
 Dodaj sekcję podcastów:
 
 html
-<section id="podcasts">
+<section id="player">
+  <h2>🔊 Słuchaj nas na żywo</h2>
+  <audio controls autoplay style="width: 80%; max-width: 600px; border: 2px solid #fff; border-radius: 10px;">
+    <source src="https://s41.myradiostream.com:39624/stream" type="audio/mpeg">
+    Twoja przeglądarka nie obsługuje odtwarzacza audio.
+  </audio>
+  <p>Gramy prosto z orbity – 24/7!</p>
+  <div class="live-indicator">🔴 LIVE</div>
+  <button class="button" onclick="location.href='#schedule'">Zobacz ramówkę</button>
+</section>
   <h2>📻 Archiwum audycji</h2>
   <p>Wkrótce dodamy nagrania z naszych najlepszych transmisji!</p>
 </section>
