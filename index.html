@@ -28,7 +28,34 @@
     h1, h2 {
       font-family: 'Audiowide', cursive;
     }
-    section {
+    section {<section id="quiz">
+  <h2>🧠 Quiz galaktyczny</h2><section id="galaxy-map">
+  <h2>🪐 Mapa Galaktyki STERNE</h2>
+  <p>Wybierz planetę i odkryj jej dźwięki:</p>
+  <button class="button" onclick="location.href='#player'">🎧 Orbita LIVE</button>
+  <button class="button" onclick="location.href='#schedule'">📅 Planeta Ramówka</button>
+  <button class="button" onclick="location.href='#quiz'">🧠 Gwiazda Quiz</button>
+</section>
+4. 📻 Podcasty i archiwum audycji (placeholder)
+Dodaj sekcję podcastów:
+
+html
+<section id="podcasts">
+  <h2>📻 Archiwum audycji</h2>
+  <p>Wkrótce dodamy nagrania z naszych najlepszych transmisji!</p>
+</section>
+  <p>Odpowiedz na pytanie i odkryj swoją muzyczną galaktykę!</p>
+  <button class="button" onclick="showResult()">Start</button>
+  <p id="quiz-result" style="margin-top: 20px;"></p>
+</section>
+
+<script>
+  function showResult() {
+    const galaxies = ["Andromeda Bass", "Orion Chill", "Sirius Synthwave", "Cassiopeia Funk"];
+    const result = galaxies[Math.floor(Math.random() * galaxies.length)];
+    document.getElementById("quiz-result").textContent = "Twoja galaktyka to: " + result;
+  }
+</script>
       padding: 60px 20px;
       text-align: center;
     }
@@ -123,7 +150,19 @@
     <div class="live-indicator">🔴 LIVE</div>
   </header>
 
-  <section id="player">
+  <section id="player"><section id="now-playing">
+  <h2>🎶 Aktualnie gramy</h2>
+  <p id="track">Ładowanie utworu...</p>
+</section>
+
+<script>
+  // Przykład: dynamiczna aktualizacja utworu (można podpiąć do API streamu)
+  const trackElement = document.getElementById('track');
+  setInterval(() => {
+    // Tu można podpiąć prawdziwe dane z serwera
+    trackElement.textContent = "DJ Nova – Galactic Pulse";
+  }, 5000);
+</script>
     <h2>🔊 Słuchaj nas na żywo</h2>
     <audio controls autoplay>
       <source src="https://stream.sternefm.pl/live.mp3" type="audio/mpeg" />
