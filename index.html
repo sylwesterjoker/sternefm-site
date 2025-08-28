@@ -9,25 +9,28 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, radial-gradient(circle at top, #0b0c2a, #000);
+      background: radial-gradient(circle at top, #0b0c2a, #000);
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
       color: white;
-      text-align: center;
+      overflow-x: hidden;
     }
     header {
       padding: 100px 20px;
+      text-align: center;
       background: linear-gradient(to bottom, #0b0c2a, #000);
+    }
+    h1, h2 {
+      font-family: 'Audiowide', cursive;
     }
     section {
       padding: 60px 20px;
+      text-align: center;
     }
     audio {
       width: 80%;
       max-width: 600px;
       border: 2px solid #fff;
       border-radius: 10px;
-    }
-    h1, h2 {
-      font-family: 'Audiowide', cursive;
     }
     ul {
       list-style: none;
@@ -40,10 +43,40 @@
       color: #0ff;
       text-decoration: none;
     }
+    .live-indicator {
+      display: inline-block;
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      animation: pulse 1s infinite;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
     footer {
       padding: 40px 20px;
       background-color: #0b0c2a;
       font-size: 0.9em;
+      text-align: center;
+    }
+    .button {
+      background-color: #0ff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #fff;
     }
   </style>
 </head>
@@ -52,6 +85,7 @@
   <header>
     <h1>🌠 STERNE FM</h1>
     <p>Gwiezdna muzyczna droga – radio z przyszłości</p>
+    <div class="live-indicator">🔴 LIVE</div>
   </header>
 
   <section id="player">
@@ -61,6 +95,7 @@
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
     <p>Gramy prosto z orbity – 24/7!</p>
+    <button class="button" onclick="location.href='#schedule'">Zobacz ramówkę</button>
   </section>
 
   <section id="about">
@@ -75,17 +110,4 @@
       <li>🎶 14:00 – Gwiezdne Brzmienia</li>
       <li>🛸 20:00 – Transmisja z Galaktyki X</li>
     </ul>
-  </section>
-
-  <section id="contact">
-    <h2>📡 Kontakt z załogą</h2>
-    <p>Email: <a href="mailto:kontakt@sternefm.pl">kontakt@sternefm.pl</a></p>
-    <p>Instagram: <a href="https://instagram.com/sternefm">@sternefm</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 STERNE FM – Nadajemy z gwiazd. Stworzone z pasji do dźwięku i kosmosu.</p>
-  </footer>
-
-</body>
-</html> 
+  </section> 
