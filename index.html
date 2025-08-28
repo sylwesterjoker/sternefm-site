@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STERNE FM – Gwiezdna Droga</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Audiowide&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <style>
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
       background: radial-gradient(circle at top, #0b0c2a, #000);
-      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
       color: white;
       overflow-x: hidden;
+    }
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
     header {
       padding: 100px 20px;
@@ -58,12 +64,6 @@
       50% { opacity: 0.4; }
       100% { opacity: 1; }
     }
-    footer {
-      padding: 40px 20px;
-      background-color: #0b0c2a;
-      font-size: 0.9em;
-      text-align: center;
-    }
     .button {
       background-color: #0ff;
       color: #000;
@@ -78,9 +78,44 @@
     .button:hover {
       background-color: #fff;
     }
+    footer {
+      padding: 40px 20px;
+      background-color: #0b0c2a;
+      font-size: 0.9em;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+
+  <canvas id="bg"></canvas>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg') });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.z = 5;
+
+    const geometry = new THREE.SphereGeometry(0.1, 24, 24);
+    const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+    for (let i = 0; i < 300; i++) {
+      const star = new THREE.Mesh(geometry, material);
+      star.position.set(
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100
+      );
+      scene.add(star);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      camera.rotation.y += 0.0005;
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
 
   <header>
     <h1>🌠 STERNE FM</h1>
@@ -91,7 +126,7 @@
   <section id="player">
     <h2>🔊 Słuchaj nas na żywo</h2>
     <audio controls autoplay>
-      <source src="https://stream.sternefm.pl/live.mp3" type="audio/mpeg">
+      <source src="https://stream.sternefm.pl/live.mp3" type="audio/mpeg" />
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
     <p>Gramy prosto z orbity – 24/7!</p>
@@ -110,4 +145,6 @@
       <li>🎶 14:00 – Gwiezdne Brzmienia</li>
       <li>🛸 20:00 – Transmisja z Galaktyki X</li>
     </ul>
-  </section> 
+  </section>
+
+  <section id="contact">  
