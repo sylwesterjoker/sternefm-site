@@ -9,12 +9,13 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at top, #0b0c2a, #000);
+      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, radial-gradient(circle at top, #0b0c2a, #000);
       color: white;
       text-align: center;
     }
     header {
       padding: 100px 20px;
+      background: linear-gradient(to bottom, #0b0c2a, #000);
     }
     section {
       padding: 60px 20px;
@@ -28,30 +29,63 @@
     h1, h2 {
       font-family: 'Audiowide', cursive;
     }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    footer {
+      padding: 40px 20px;
+      background-color: #0b0c2a;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>🌠 STERNE FM</h1>
-    <p>Radio z innej galaktyki</p>
+    <p>Gwiezdna muzyczna droga – radio z przyszłości</p>
   </header>
 
-  <section id="player" style="background: linear-gradient(to bottom, #0b0c2a, #000); padding: 60px 20px; text-align: center; color: white;">
-  <h2 style="font-family: 'Orbitron', sans-serif; font-size: 2em;">🔊 Słuchaj STERNE FM</h2>
-  <audio controls autoplay style="width: 80%; max-width: 600px; margin-top: 20px; border: 2px solid #fff; border-radius: 10px;">
-    <source src="https://stream.sternefm.pl/live.mp3" type="audio/mpeg">
-    Twoja przeglądarka nie obsługuje odtwarzacza audio.
-  </audio>
-  <p style="margin-top: 10px;">Gramy na żywo – prosto z orbity!</p>
-</section>
-    <h2>🔊 Słuchaj nas</h2>
+  <section id="player">
+    <h2>🔊 Słuchaj nas na żywo</h2>
     <audio controls autoplay>
       <source src="https://stream.sternefm.pl/live.mp3" type="audio/mpeg">
       Twoja przeglądarka nie obsługuje odtwarzacza audio.
     </audio>
-    <p>Gramy na żywo – prosto z orbity!</p>
+    <p>Gramy prosto z orbity – 24/7!</p>
   </section>
 
+  <section id="about">
+    <h2>🛰️ Kim jesteśmy?</h2>
+    <p>STERNE FM to niezależne radio nadające z galaktyki kreatywności. Nasza misja: dostarczać dźwięki spoza Ziemi, inspirować, łączyć i zaskakiwać. Jesteśmy głosem przyszłości – dla tych, którzy słuchają sercem.</p>
+  </section>
+
+  <section id="schedule">
+    <h2>🪐 Ramówka</h2>
+    <ul>
+      <li>🌅 10:00 – Kosmiczne Przebudzenie</li>
+      <li>🎶 14:00 – Gwiezdne Brzmienia</li>
+      <li>🛸 20:00 – Transmisja z Galaktyki X</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>📡 Kontakt z załogą</h2>
+    <p>Email: <a href="mailto:kontakt@sternefm.pl">kontakt@sternefm.pl</a></p>
+    <p>Instagram: <a href="https://instagram.com/sternefm">@sternefm</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 STERNE FM – Nadajemy z gwiazd. Stworzone z pasji do dźwięku i kosmosu.</p>
+  </footer>
+
 </body>
-</html>
+</html> 
